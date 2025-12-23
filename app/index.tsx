@@ -1,10 +1,19 @@
-import Main from "@/Components/main";
-import { PaperProvider } from "react-native-paper";
+import ThemedView from "@/components/ThemedView";
+import { useCustomTheme } from "@/hooks/useCustomTheme";
+import { Text } from "react-native-paper";
 
 export default function Index() {
+  const { isDarkTheme, toggleTheme } = useCustomTheme();
+
   return (
-    <PaperProvider>
-      <Main />
-    </PaperProvider>
+    <ThemedView
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text>Current device theme is: </Text>
+    </ThemedView>
   );
 }
