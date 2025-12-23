@@ -1,5 +1,6 @@
-import ThemedView from "@/components/ThemedView";
-import { Text } from "react-native-paper";
+import ThemedView from "@/@overrides/ThemedView";
+import ThemeToggle from "@/@overrides/ThemeToggleButton";
+import BottomBar from "@/components/bottomBar";
 
 export default function Index() {
   return (
@@ -10,7 +11,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Current device theme is: </Text>
+      <ThemeToggle />
+      <BottomBar />
     </ThemedView>
   );
 }

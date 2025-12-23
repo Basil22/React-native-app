@@ -1,8 +1,8 @@
 import { useCustomTheme } from "@/hooks/useCustomTheme";
 import { Switch } from "react-native-paper";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ ...props }) {
   const { isDarkTheme, toggleTheme } = useCustomTheme();
 
-  return <Switch value={isDarkTheme} onValueChange={toggleTheme} />;
+  return <Switch {...props} value={isDarkTheme} onValueChange={toggleTheme} />;
 }

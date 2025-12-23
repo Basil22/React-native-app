@@ -1,16 +1,14 @@
-import ThemedStack from "@/components/ThemedStack";
+import ThemedStack from "@/@overrides/ThemedStack";
+import { INDEX_PAGE } from "@/constants/routes";
 import { PreferenceProvider } from "@/contexts/themeContextProvider";
 import { Stack } from "expo-router";
-import { PaperProvider } from "react-native-paper";
 
 export default function RootLayout() {
   return (
     <PreferenceProvider>
-      <PaperProvider>
-        <ThemedStack>
-          <Stack.Screen name="index" />
-        </ThemedStack>
-      </PaperProvider>
+      <ThemedStack>
+        <Stack.Screen name={INDEX_PAGE} />
+      </ThemedStack>
     </PreferenceProvider>
   );
 }

@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useColorScheme } from "react-native";
+import { MD3DarkTheme, MD3LightTheme, PaperProvider } from "react-native-paper";
 
 type PreferenceContextType = {
   toggleTheme: () => void;
@@ -21,10 +21,11 @@ export const PreferenceContext = createContext<
 >(undefined);
 
 export const PreferenceProvider = ({ children }: PreferenceProviderProps) => {
-  const deviceTheme = useColorScheme();
-  const isDeviceDark = deviceTheme === "dark";
+  // Read the theme of the device
+  // const deviceTheme = useColorScheme();
+  // const isDeviceDark = deviceTheme === themeConst.DARK;
 
-  const [isDarkTheme, setIsThemeDark] = useState<boolean>(isDeviceDark);
+  const [isDarkTheme, setIsThemeDark] = useState<boolean>(false);
 
   const toggleTheme = useCallback(() => {
     return setIsThemeDark(!isDarkTheme);
@@ -38,9 +39,11 @@ export const PreferenceProvider = ({ children }: PreferenceProviderProps) => {
     [toggleTheme, isDarkTheme]
   );
 
+  const theme = isDarkTheme ? MD3DarkTheme : MD3LightTheme;
+
   return (
     <PreferenceContext.Provider value={preferencesValue}>
-      {children}
+      <PaperProvider theme={theme}>{children}</PaperProvider>
     </PreferenceContext.Provider>
   );
 };
