@@ -1,7 +1,5 @@
-import BottomBar from "@/@overrides/bottomBar";
 import ThemedView from "@/@overrides/ThemedView";
 import BodyOption from "@/components/home/bodyOptions";
-import AddButton from "@/components/incomingExpenses/addButton";
 import MainCards from "@/components/shared/mainCards";
 import { StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
@@ -19,9 +17,9 @@ export default function Index() {
         Menu
       </Text>
       <BodyOption />
-      <BottomBar>
+      {/* <BottomBar>
         <AddButton />
-      </BottomBar>
+      </BottomBar> */}
     </ThemedView>
   );
 }

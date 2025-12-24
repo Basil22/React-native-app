@@ -21,7 +21,7 @@ export default function OtherOption() {
 const styles = StyleSheet.create({
   iconContainer: {
     width: "100%",
-    height: "90%",
+    height: "95%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
