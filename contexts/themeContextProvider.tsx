@@ -1,3 +1,4 @@
+import { darkModeBG, lightModeBG } from "@/constants/themeColors";
 import {
   createContext,
   ReactNode,
@@ -6,6 +7,7 @@ import {
   useState,
 } from "react";
 import { MD3DarkTheme, MD3LightTheme, PaperProvider } from "react-native-paper";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 type PreferenceContextType = {
   toggleTheme: () => void;
@@ -43,7 +45,18 @@ export const PreferenceProvider = ({ children }: PreferenceProviderProps) => {
 
   return (
     <PreferenceContext.Provider value={preferencesValue}>
-      <PaperProvider theme={theme}>{children}</PaperProvider>
+      <PaperProvider theme={theme}>
+        <SafeAreaProvider>
+          <SafeAreaView
+            style={{
+              flex: 1,
+              backgroundColor: isDarkTheme ? darkModeBG : lightModeBG,
+            }}
+          >
+            {children}
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </PaperProvider>
     </PreferenceContext.Provider>
   );
 };

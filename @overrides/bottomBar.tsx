@@ -5,7 +5,11 @@ import { ReactNode } from "react";
 import { StyleSheet } from "react-native";
 import { Surface, useTheme } from "react-native-paper";
 
-export default function BottomBar(children: ReactNode) {
+type BottomBarProps = {
+  children: ReactNode;
+};
+
+export default function BottomBar({ children }: BottomBarProps) {
   const { isDarkTheme } = useCustomTheme();
   const theme = useTheme();
 
@@ -27,9 +31,6 @@ export default function BottomBar(children: ReactNode) {
           },
         ]}
       >
-        {/* <DeleteButton />
-        <AddButton />
-        <SettingsButton /> */}
         {children}
       </ThemedView>
     </Surface>

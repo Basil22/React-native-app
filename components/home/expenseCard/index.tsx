@@ -1,35 +1,36 @@
-import ThemedView from "@/@overrides/ThemedView";
 import { darkModeBG } from "@/constants/themeColors";
-import { StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
+import { Pressable, StyleSheet } from "react-native";
 import { Icon, Text } from "react-native-paper";
 
 export default function ExpenseCard() {
+  const router = useRouter();
+
   return (
-    <ThemedView style={[styles.iconContainer, { backgroundColor: "white" }]}>
-      <Icon source="script-text" color={darkModeBG} size={60} />
-      <Text style={styles.text} variant="labelLarge">
-        All Payments
-      </Text>
-    </ThemedView>
+    <Pressable
+      style={styles.iconContainer}
+      onPress={() => router.push("/expenses")}
+    >
+      <Icon source="script-text" size={60} color={darkModeBG} />
+
+      <Text style={styles.text}>All Payments</Text>
+    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   iconContainer: {
-    borderRadius: "10%",
     width: "100%",
-    height: "auto",
+    height: "90%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
-    // alignContent: "space-evenly",
-    paddingTop: "20%",
   },
 
   text: {
     fontSize: 18,
-    top: 5,
+    top: 10,
     lineHeight: 20,
     letterSpacing: -0.5,
   },

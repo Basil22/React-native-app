@@ -33,7 +33,7 @@ export default function CustomIconButton({
           width: buttonSize,
           height: buttonSize,
           backgroundColor: darkOnLight,
-          boxShadow: `${altDarkOnLight} 3px 3px`,
+          boxShadow: `${altDarkOnLight} 2px 2px`,
           borderColor: altDarkOnLight,
         },
         customStyle,
