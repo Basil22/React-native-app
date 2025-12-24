@@ -7,14 +7,16 @@ import ThemedView from "./ThemedView";
 type CustomIconButtonProps = {
   buttonIcon: string;
   iconSize?: number;
-  style?: any;
+  buttonSize?: number;
+  customStyle?: any;
   onPress?: () => void;
 };
 
 export default function CustomIconButton({
   buttonIcon,
   iconSize = 30,
-  style,
+  buttonSize = 50,
+  customStyle,
   onPress,
   ...props
 }: CustomIconButtonProps) {
@@ -28,10 +30,13 @@ export default function CustomIconButton({
       style={[
         styles.buttonContainer,
         {
+          width: buttonSize,
+          height: buttonSize,
           backgroundColor: darkOnLight,
           boxShadow: `${altDarkOnLight} 3px 3px`,
           borderColor: altDarkOnLight,
         },
+        customStyle,
       ]}
     >
       <IconButton
@@ -46,13 +51,11 @@ export default function CustomIconButton({
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 50,
     top: 10,
-    height: 50,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "50%",
     borderWidth: 2,
-    marginRight: 20,
+    marginRight: 10,
   },
 });

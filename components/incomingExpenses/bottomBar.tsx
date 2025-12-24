@@ -1,11 +1,11 @@
+import ThemedView from "@/@overrides/ThemedView";
 import { darkModeBG, lightModeBG } from "@/constants/themeColors";
 import { useCustomTheme } from "@/hooks/useCustomTheme";
+import { ReactNode } from "react";
 import { StyleSheet } from "react-native";
 import { Surface, useTheme } from "react-native-paper";
-import AddButton from "./addButton";
-import SettingsButton from "./settingsButton";
 
-export default function BottomBar() {
+export default function BottomBar(children: ReactNode) {
   const { isDarkTheme } = useCustomTheme();
   const theme = useTheme();
 
@@ -19,8 +19,19 @@ export default function BottomBar() {
         },
       ]}
     >
-      <AddButton />
-      <SettingsButton />
+      <ThemedView
+        style={[
+          styles.buttonsContainer,
+          {
+            backgroundColor: theme.colors.primaryContainer,
+          },
+        ]}
+      >
+        {/* <DeleteButton />
+        <AddButton />
+        <SettingsButton /> */}
+        {children}
+      </ThemedView>
     </Surface>
   );
 }
@@ -34,8 +45,15 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 80,
-    justifyContent: "flex-end",
+    justifyContent: "center",
     paddingHorizontal: 24,
     borderTopWidth: 4,
+  },
+
+  buttonsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    left: 5,
+    alignItems: "baseline",
   },
 });
