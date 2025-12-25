@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     // justifyContent: "center",
-    // alignItems: "",
+    // alignItems: "flex-start",
   },
 
   cardButton: {

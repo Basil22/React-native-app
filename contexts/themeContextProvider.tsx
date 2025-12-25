@@ -23,10 +23,6 @@ export const PreferenceContext = createContext<
 >(undefined);
 
 export const PreferenceProvider = ({ children }: PreferenceProviderProps) => {
-  // Read the theme of the device
-  // const deviceTheme = useColorScheme();
-  // const isDeviceDark = deviceTheme === themeConst.DARK;
-
   const [isDarkTheme, setIsThemeDark] = useState<boolean>(false);
 
   const toggleTheme = useCallback(() => {

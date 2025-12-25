@@ -8,23 +8,31 @@ import { Text } from "react-native-paper";
 export default function Index() {
   return (
     <ThemedView style={styles.contaier}>
+      <Text style={styles.greeting}>Hello, User</Text>
+
       <Text style={styles.expenseText} variant="titleSmall">
-        Upcoming Payment
+        Your Upcoming Payment
       </Text>
       <MainCards />
 
       <Text style={styles.menuText} variant="titleSmall">
         Menu
       </Text>
+
       <BodyOption />
-      {/* <BottomBar>
-        <AddButton />
-      </BottomBar> */}
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
+  greeting: {
+    // backgroundColor: "red",
+    alignSelf: "flex-start",
+    left: "5%",
+    marginTop: 10,
+    fontSize: 45,
+    fontWeight: 100,
+  },
   contaier: {
     flex: 1,
     display: "flex",
@@ -34,15 +42,21 @@ const styles = StyleSheet.create({
   },
   expenseText: {
     position: "fixed",
-    marginTop: "5%",
+    marginTop: "2%",
     marginBottom: "2%",
-    left: "-25%",
+    alignSelf: "flex-start",
+    marginLeft: 20,
     textAlign: "left",
-    fontWeight: 400,
+    fontWeight: 900,
+    letterSpacing: -0.1,
   },
 
   menuText: {
-    left: "-38%",
+    // left: "-38%",
+    alignSelf: "flex-start",
     marginTop: 20,
+    marginLeft: 20,
+    fontWeight: 900,
+    letterSpacing: -0.1,
   },
 });

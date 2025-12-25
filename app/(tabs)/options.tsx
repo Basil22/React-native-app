@@ -2,10 +2,10 @@ import ThemedView from "@/@overrides/ThemedView";
 import { StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
 
-export default function ExpensesPage() {
+export default function MoreOptions() {
   return (
     <ThemedView style={styles.text}>
-      <Text> Expenses under construction...</Text>
+      <Text>Options under Constuction...</Text>;
     </ThemedView>
   );
 }

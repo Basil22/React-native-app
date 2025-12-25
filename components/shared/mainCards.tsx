@@ -28,8 +28,11 @@ export default function MainCards() {
           },
         ]}
       >
-        <Button>
-          <Text style={{ letterSpacing: 0.2 }} variant="labelSmall">
+        <Button style={{ backgroundColor: "#ec5a5a" }}>
+          <Text
+            style={{ letterSpacing: 0.2, color: "white", fontWeight: 700 }}
+            variant="labelSmall"
+          >
             Mark As Completed
           </Text>
         </Button>

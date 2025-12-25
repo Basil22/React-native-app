@@ -9,7 +9,7 @@ export default function OtherOption() {
   return (
     <Pressable
       style={styles.iconContainer}
-      //   onPress={() => router.push("/expenses")}
+      onPress={() => router.push("/options")}
     >
       <Icon source="dots-vertical" size={60} color={darkModeBG} />
 

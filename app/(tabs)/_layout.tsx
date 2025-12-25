@@ -1,24 +1,36 @@
+import TabItem from "@/components/home/tabItemStyle";
+import { darkModeBG } from "@/constants/themeColors";
 import { Tabs } from "expo-router";
-import { StyleSheet } from "react-native";
-import { Icon } from "react-native-paper";
+import { useTheme } from "react-native-paper";
 
 export default function BottomNavBarLayout() {
+  const theme = useTheme();
+
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#ffd33d",
+        tabBarActiveTintColor: darkModeBG,
         headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          borderTopWidth: 5,
+          borderColor: "black",
+          height: "10%",
+          backgroundColor: theme.colors.primaryContainer,
+        },
+        tabBarIconStyle: {
+          marginTop: "15%",
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
-          tabBarIcon: ({ color, focused }) => (
-            <Icon
-              source={focused ? "home" : "home-outline"}
-              color={color}
-              size={24}
+          tabBarIcon: ({ focused }) => (
+            <TabItem
+              icon={focused ? "home" : "home-outline"}
+              focused={focused}
+              label="Home"
             />
           ),
         }}
@@ -27,20 +39,24 @@ export default function BottomNavBarLayout() {
       <Tabs.Screen
         name="expenses"
         options={{
-          title: "Expenses",
-          tabBarIcon: ({ color, focused }) => (
-            <Icon
-              source={focused ? "script-text" : "script-text-outline"}
-              color={color}
-              size={24}
+          tabBarIcon: ({ focused }) => (
+            <TabItem
+              focused={focused}
+              icon={focused ? "script-text" : "script-text-outline"}
+              label="Expenses"
             />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="options"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabItem icon={"dots-vertical"} focused={focused} label="Options" />
           ),
         }}
       />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  tabStyle: {},
-});

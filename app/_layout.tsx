@@ -7,8 +7,6 @@ export default function RootLayout() {
     <PreferenceProvider>
       <ThemedStack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/* <Stack.Screen name={INDEX_PAGE} />
-        <Stack.Screen name={EXPENSES_PAGE} /> */}
       </ThemedStack>
     </PreferenceProvider>
   );
