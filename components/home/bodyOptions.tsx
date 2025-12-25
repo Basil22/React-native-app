@@ -1,5 +1,5 @@
 import ThemedView from "@/@overrides/ThemedView";
-import { darkModeBG, lightModeBG } from "@/constants/themeColors";
+import { DARKMODEBG, LIGHTMODEBG, WHITE } from "@/constants/themeColors";
 import { useCustomTheme } from "@/hooks/useCustomTheme";
 import { StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
@@ -8,7 +8,7 @@ import OtherOption from "./otherOptions";
 
 export default function BodyOption() {
   const { isDarkTheme } = useCustomTheme();
-  const altDarkOnLight = isDarkTheme ? lightModeBG : darkModeBG;
+  const altDarkOnLight = isDarkTheme ? LIGHTMODEBG : DARKMODEBG;
   return (
     <ThemedView style={styles.cardContainer}>
       <Card
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "white",
+    backgroundColor: WHITE,
     width: "40%",
     margin: 15,
     marginTop: 5,

@@ -1,4 +1,4 @@
-import { darkModeBG, lightModeBG } from "@/constants/themeColors";
+import { DARKMODEBG, LIGHTMODEBG } from "@/constants/themeColors";
 import { useCustomTheme } from "@/hooks/useCustomTheme";
 import { StyleSheet } from "react-native";
 import { IconButton } from "react-native-paper";
@@ -21,8 +21,8 @@ export default function CustomIconButton({
   ...props
 }: CustomIconButtonProps) {
   const { isDarkTheme } = useCustomTheme();
-  const darkOnLight = isDarkTheme ? darkModeBG : lightModeBG;
-  const altDarkOnLight = isDarkTheme ? lightModeBG : darkModeBG;
+  const darkOnLight = isDarkTheme ? DARKMODEBG : LIGHTMODEBG;
+  const altDarkOnLight = isDarkTheme ? LIGHTMODEBG : DARKMODEBG;
 
   return (
     <ThemedView

@@ -1,4 +1,4 @@
-import { darkModeBG, lightModeBG } from "@/constants/themeColors";
+import { DARKMODEBG, LIGHTMODEBG } from "@/constants/themeColors";
 import {
   createContext,
   ReactNode,
@@ -46,7 +46,7 @@ export const PreferenceProvider = ({ children }: PreferenceProviderProps) => {
           <SafeAreaView
             style={{
               flex: 1,
-              backgroundColor: isDarkTheme ? darkModeBG : lightModeBG,
+              backgroundColor: isDarkTheme ? DARKMODEBG : LIGHTMODEBG,
             }}
           >
             {children}

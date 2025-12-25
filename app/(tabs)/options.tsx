@@ -5,7 +5,7 @@ import { Text } from "react-native-paper";
 export default function MoreOptions() {
   return (
     <ThemedView style={styles.text}>
-      <Text>Options under Constuction...</Text>;
+      <Text>Options under Constuction...</Text>
     </ThemedView>
   );
 }

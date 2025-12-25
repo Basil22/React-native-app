@@ -1,5 +1,5 @@
 import ThemedView from "@/@overrides/ThemedView";
-import { darkModeBG, lightModeBG } from "@/constants/themeColors";
+import { DARKMODEBG, LIGHTMODEBG } from "@/constants/themeColors";
 import { useCustomTheme } from "@/hooks/useCustomTheme";
 import { ReactNode } from "react";
 import { StyleSheet } from "react-native";
@@ -19,7 +19,7 @@ export default function BottomBar({ children }: BottomBarProps) {
         styles.surface,
         {
           backgroundColor: theme.colors.primaryContainer,
-          borderTopColor: isDarkTheme ? lightModeBG : darkModeBG,
+          borderTopColor: isDarkTheme ? LIGHTMODEBG : DARKMODEBG,
         },
       ]}
     >

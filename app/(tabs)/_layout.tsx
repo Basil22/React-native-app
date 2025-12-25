@@ -1,5 +1,5 @@
 import TabItem from "@/components/home/tabItemStyle";
-import { darkModeBG } from "@/constants/themeColors";
+import { BLACK, DARKMODEBG } from "@/constants/themeColors";
 import { Tabs } from "expo-router";
 import { useTheme } from "react-native-paper";
 
@@ -9,12 +9,13 @@ export default function BottomNavBarLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: darkModeBG,
+        tabBarActiveTintColor: DARKMODEBG,
         headerShown: false,
         tabBarShowLabel: false,
+        animation: "shift",
         tabBarStyle: {
-          borderTopWidth: 5,
-          borderColor: "black",
+          borderTopWidth: 3,
+          borderColor: BLACK,
           height: "10%",
           backgroundColor: theme.colors.primaryContainer,
         },
